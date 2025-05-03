@@ -1,0 +1,6 @@
+@smartcube_HostAddress = http://localhost:5270
+
+GET {{smartcube_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
