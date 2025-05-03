@@ -15,6 +15,8 @@ namespace smartcube.DataContext
 
         public virtual DbSet<Department> Departments { get; set; } // تأكد من وجود الكلاس Users في models
         public virtual DbSet<Users> Users { get; set; } // تأكد من وجود الكلاس Users في models
+        public virtual DbSet<Test> Test { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -38,6 +40,7 @@ namespace smartcube.DataContext
             modelBuilder.Entity<Department>().HasKey(u => u.Id);
             modelBuilder.Entity<Department>().HasMany(u => u.Users).WithOne(u => u.Department)
                 .HasForeignKey(u => u.DepartmentId);
+            modelBuilder.Entity<Test>().HasKey(u => u.id);
 
 
 
